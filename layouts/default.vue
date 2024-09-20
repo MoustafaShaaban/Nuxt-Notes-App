@@ -23,13 +23,13 @@ const notesStore = useNotesStore();
   <div class="q-pa-md">
     <q-layout view="hHh Lpr lff" :class="Dark.isActive ? 'text-white' : 'text-dark'">
 
-      <q-header reveal elevated class="bg-primary text-white">
+      <q-header reveal :class="$q.dark.isActive ? 'bg-dark text-white' : 'bg-white text-dark'">
         <q-toolbar>
           <q-btn flat icon="menu" @click="drawerLeft = !drawerLeft" />
           <q-toolbar-title>
-            <q-breadcrumbs active-color="white" style="font-size: 16px">
-              <q-breadcrumbs-el label="Home" class="text-white" icon="home" to="/" />
-              <q-breadcrumbs-el label="About" class="text-white" icon="info" to="/about" />
+            <q-breadcrumbs active-color="$q.dark.isActive > 'white' : 'dark'" style="font-size: 16px">
+              <q-breadcrumbs-el label="Home" icon="home" to="/" />
+              <q-breadcrumbs-el label="About" icon="info" to="/about" />
             </q-breadcrumbs>
           </q-toolbar-title>
 
